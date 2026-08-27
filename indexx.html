@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Skasy 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+    color:white;
+    background:linear-gradient(135deg,#ff4f81,#8e5cff,#4facfe);
+}
+
+.page{
+    position:absolute;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.page.active{
+    display:flex;
+}
+
+.card{
+    width:100%;
+    max-width:430px;
+    max-height:90vh;
+    overflow:auto;
+    padding:35px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    animation:appear 1s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:scale(.7) translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+h2{
+    font-size:30px;
+    margin:15px 0;
+}
+
+p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.clickBtn{
+    margin-top:25px;
+    padding:15px 35px;
+    border:0;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    color:#ff477e;
+    background:white;
+    cursor:pointer;
+    box-shadow:0 8px 25px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.clickBtn:active{
+    transform:scale(.94);
+}
+
+.small{
+    margin-top:15px;
+    opacity:.85;
+    font-size:14px;
+}
+
+/* CENTER SURPRISE BUTTON */
+
+.surprise{
+    width:125px;
+    height:125px;
+    border-radius:50%;
+    border:5px solid white;
+    background:rgba(255,255,255,.2);
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow:0 0 0 0 rgba(255,255,255,.7);
+    }
+    70%{
+        box-shadow:0 0 0 30px rgba(255,255,255,0);
+    }
+    100%{
+        box-shadow:0 0 0 0 rgba(255,255,255,0);
+    }
+}
+
+/* BIRTHDAY PAGE */
+
+.birthday h1{
+    font-size:48px;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-10px) scale(1.03);
+    }
+}
+
+.name{
+    font-size:40px;
+    font-weight:bold;
+    margin:15px 0;
+    text-shadow:0 0 20px white;
+}
+
+.special{
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.final{
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* THIRD PAGE PHOTO */
+
+.couplePhoto{
+    width:210px;
+    height:210px;
+    object-fit:cover;
+    border-radius:25px;
+    border:5px solid white;
+    margin-bottom:15px;
+    box-shadow:0 0 30px rgba(255,255,255,.7);
+    animation:photoPop 1.2s ease;
+}
+
+@keyframes photoPop{
+    from{
+        opacity:0;
+        transform:scale(.5) rotate(-5deg);
+    }
+    to{
+        opacity:1;
+        transform:scale(1) rotate(0deg);
+    }
+}
+
+.from{
+    margin-top:25px;
+    font-size:20px;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    font-size:25px;
+    animation:heartFly 6s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes heartFly{
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-110vh) rotate(30deg);
+        opacity:0;
+    }
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    width:10px;
+    height:10px;
+    top:-20px;
+    animation:fall 4s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     PAGE 1
+========================= -->
+
+<section class="page active" id="page1">
+
+    <div class="card">
+
+        <div style="font-size:65px;">
+            🎁
+        </div>
+
+        <h1>
+            Hey Skasy 👀
+        </h1>
+
+        <p>
+            I have a little surprise for you...
+            <br>
+            But you have to find it 😏
+        </p>
+
+        <button class="clickBtn" onclick="step1()">
+            CLICK HERE 💗
+        </button>
+
+        <div class="small">
+            Something special is waiting...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 1 - SECOND CLICK
+========================= -->
+
+<section class="page" id="step2">
+
+    <div class="card">
+
+        <div style="font-size:65px;">
+            😳
+        </div>
+
+        <h2>
+            Wait... 👀
+        </h2>
+
+        <p>
+            You actually clicked it!
+            <br>
+            But the surprise isn't here yet...
+        </p>
+
+        <button class="clickBtn" onclick="step2()">
+            CLICK AGAIN ✨
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 1 - FINAL CLICK
+========================= -->
+
+<section class="page" id="step3">
+
+    <div class="card">
+
+        <div style="font-size:65px;">
+            🤫
+        </div>
+
+        <h2>
+            One Last Click...
+        </h2>
+
+        <p>
+            The real surprise is waiting here 👀
+        </p>
+
+        <button class="surprise" onclick="step3()">
+            CLICK<br>
+            ME 💖
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 2 - BIRTHDAY
+========================= -->
+
+<section class="page" id="page2">
+
+    <div class="card birthday">
+
+        <div style="font-size:70px;">
+            🎂🎉
+        </div>
+
+        <h1>
+            HAPPY<br>
+            BIRTHDAY!
+        </h1>
+
+        <div class="name">
+            SKASY 💖
+        </div>
+
+        <div class="special">
+            ✨ My Special Person ✨
+        </div>
+
+        <p>
+            May your special day be filled with
+            happiness, smiles, beautiful memories
+            and lots of amazing moments! 💖
+            <br><br>
+            Keep smiling and keep shining! ✨
+        </p>
+
+        <button class="clickBtn" onclick="goFinal()">
+            ONE MORE SURPRISE 🎁
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 3 - FINAL
+========================= -->
+
+<section class="page" id="page3">
+
+    <div class="card">
+
+        <!--
+        PHOTO:
+        Apni dono ki photo ka naam "us.jpg"
+        rakhkar is HTML file ke same folder
+        me rakhna.
+        -->
+
+        <img
+            src="us.jpg"
+            class="couplePhoto"
+            alt="Our Photo"
+        >
+
+        <h2>
+            For My Special Person 💖
+        </h2>
+
+        <p class="final">
+            Happy Birthday Skasy! 🎂✨
+        </p>
+
+        <p style="margin-top:15px;">
+            I hope your birthday is filled with
+            happiness, beautiful moments and
+            lots of smiles. 🥹💗
+            <br><br>
+            You deserve all the happiness in
+            the world. Keep smiling and
+            keep shining! ✨
+        </p>
+
+        <p class="final" style="margin-top:20px;">
+            I hope you like it ❤️
+        </p>
+
+        <div class="from">
+            — From <b>Gujjubhai</b> 🫶
+        </div>
+
+        <div style="font-size:35px;margin-top:20px;">
+            🎀 🎂 ✨ 💖
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+/* =========================
+   PAGE CHANGE
+========================= */
+
+function show(id){
+
+    document.querySelectorAll(".page").forEach(page=>{
+        page.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+}
+
+
+/* =========================
+   FIRST CLICK
+========================= */
+
+function step1(){
+
+    show("step2");
+
+}
+
+
+/* =========================
+   SECOND CLICK
+========================= */
+
+function step2(){
+
+    show("step3");
+
+}
+
+
+/* =========================
+   THIRD CLICK
+   BIRTHDAY REVEAL
+========================= */
+
+function step3(){
+
+    show("page2");
+
+    createConfetti();
+    createHearts();
+
+}
+
+
+/* =========================
+   FINAL PAGE
+========================= */
+
+function goFinal(){
+
+    show("page3");
+
+    createConfetti();
+    createHearts();
+
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti(){
+
+    for(let i=0;i<150;i++){
+
+        const c=document.createElement("div");
+
+        c.className="confetti";
+
+        c.style.left=
+            Math.random()*100+"vw";
+
+        c.style.animationDelay=
+            Math.random()*2+"s";
+
+        c.style.background=
+            `hsl(${Math.random()*360},100%,60%)`;
+
+        c.style.transform=
+            `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },5000);
+
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+function createHearts(){
+
+    const emojis=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "✨",
+        "🎀"
+    ];
+
+    for(let i=0;i<25;i++){
+
+        const heart=
+            document.createElement("div");
+
+        heart.className="heart";
+
+        heart.innerHTML=
+            emojis[
+                Math.floor(
+                    Math.random()*emojis.length
+                )
+            ];
+
+        heart.style.left=
+            Math.random()*100+"vw";
+
+        heart.style.animationDelay=
+            Math.random()*5+"s";
+
+        heart.style.animationDuration=
+            (4+Math.random()*4)+"s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },9000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
